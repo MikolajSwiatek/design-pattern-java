@@ -1,8 +1,17 @@
 package BuilderPattern;
 
-public class Main {
-    public static void main (String[] args) {
-        Person person = new Person(
+import org.junit.Before;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class BuilderTest {
+    private Person person1;
+    private Person person2;
+    private Person person3;
+
+    @Before
+    public void setPerons() {
+        person1 = new Person(
                 "Name",
                 "Surname",
                 true,
@@ -14,7 +23,7 @@ public class Main {
                 "State",
                 "Poland");
 
-        Person person2 = new Person.StaticPersonBuilder()
+        person2 = new Person.StaticPersonBuilder()
                 .name("Name")
                 .surname("Surname")
                 .isMan(true)
@@ -27,7 +36,7 @@ public class Main {
                 .country("Poland")
                 .build();
 
-        Person person3 = new PersonBuilder()
+         person3 = new PersonBuilder()
                 .name("Name")
                 .surname("Surname")
                 .isMan(true)
@@ -39,13 +48,20 @@ public class Main {
                 .state("State")
                 .country("Poland")
                 .build();
-
-        printlnPersons(person, person2, person3);
     }
 
-    private static void printlnPersons(Person person, Person person2, Person person3) {
-         System.out.println(person);
-         System.out.println(person2);
-         System.out.println(person3);
+    @Test
+    public void checkPersonClassWithStaticPersonBuilder() {
+        assertEquals(person1.toString(), person2.toString());
+    }
+
+    @Test
+    public void checkPersonClassWithPersonBuilder() {
+        assertEquals(person1.toString(), person3.toString());
+    }
+
+    @Test
+    public void checkStaticPersonBuilderClassWithPersonBuilder() {
+        assertEquals(person2.toString(), person3.toString());
     }
 }
