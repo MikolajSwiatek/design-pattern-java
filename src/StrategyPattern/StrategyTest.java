@@ -33,7 +33,7 @@ public class StrategyTest {
     }
 
     @Test
-    public void checkAgee() {
+    public void checkAge() {
         Date now = new Date();
         List<Player> players = new ArrayList<>();
         players.add(new Player("A", 17 , now.getTime() - 10));
