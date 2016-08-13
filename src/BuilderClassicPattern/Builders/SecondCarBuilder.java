@@ -20,7 +20,7 @@ public class SecondCarBuilder implements CarBuilder {
 
     @Override
     public void engine() {
-        Engine engine = new Engine("forSecondtCar");
+        Engine engine = new Engine("forSecondCar");
         this.car.setEngine(engine);
     }
 
