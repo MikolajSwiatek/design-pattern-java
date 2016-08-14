@@ -10,8 +10,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class BuilderClassicTest {
-    Car firstCar;
-    Car secondCar;
+    private Car firstCar;
+    private Car secondCar;
 
     @Before
     public void SetUp() {

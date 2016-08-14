@@ -10,7 +10,6 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class StrategyTest {
-
     @Test
     public void checkDateContractExpire() {
         Date now = new Date();
