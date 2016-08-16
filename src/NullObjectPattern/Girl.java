@@ -5,8 +5,6 @@ public class Girl extends Animal {
         this.name = "Girl";
     }
 
-
-
     @Override
     public String getSound() {
         return "Shopping!";
