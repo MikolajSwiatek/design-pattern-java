@@ -14,7 +14,7 @@ public class BuilderClassicTest {
     private Car secondCar;
 
     @Before
-    public void SetUp() {
+    public void setUp() {
         CarBuilder firstCarBuilder = new FirstCarBuilder();
         CarBuilder secondCarBuilder = new SecondCarBuilder();
 
