@@ -2,7 +2,7 @@ package BuilderPattern;
 
 public class Main {
     public static void main (String[] args) {
-        Person person = new Person(
+        Person person1 = new Person(
                 "Name",
                 "Surname",
                 true,
@@ -40,12 +40,12 @@ public class Main {
                 .country("Poland")
                 .build();
 
-        printlnPersons(person, person2, person3);
+        printPerson(person1);
+        printPerson(person2);
+        printPerson(person3);
     }
 
-    private static void printlnPersons(Person person, Person person2, Person person3) {
+    private static void printPerson(Person person) {
          System.out.println(person);
-         System.out.println(person2);
-         System.out.println(person3);
     }
 }
