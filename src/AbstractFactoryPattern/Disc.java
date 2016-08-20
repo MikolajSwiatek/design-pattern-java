@@ -3,6 +3,7 @@ package AbstractFactoryPattern;
 public abstract class Disc {
     protected String name;
     protected int size;
+    protected String type;
 
     public Disc(String name, int size) {
         this.name = name;
@@ -23,6 +24,10 @@ public abstract class Disc {
 
     public void setSize(int size) {
         this.size = size;
+    }
+
+    public String getType() {
+        return type;
     }
 
     @Override
