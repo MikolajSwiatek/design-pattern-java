@@ -37,4 +37,14 @@ public class ObserverPatternTest {
 
         assertTrue(subject.getObservers().size() == 0);
     }
+
+    @Test
+    public void WhenProductChangeExistStatustShouldReturnCorrectLength() {
+        ClientObserver client1 = new ClientObserver("C1", null);
+
+        subject.register(client1);
+        subject.setIsExist(true);
+
+        assertTrue(client1.getLastUpdated() != null);
+    }
 }
