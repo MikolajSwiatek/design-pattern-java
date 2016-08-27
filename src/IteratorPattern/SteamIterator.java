@@ -15,14 +15,14 @@ public class SteamIterator implements GameIterator {
 
     @Override
     public boolean hasNext() {
-        return findNextElementIndex() != -1;
+        this.index = findNextElementIndex();
+        return this.index != -1;
     }
 
     @Override
     public Game next() {
-        int i = findNextElementIndex();
-        return i > -1 ?
-                steam.getGames().get(i) :
+        return this.index > -1 ?
+                steam.getGames().get(this.index) :
                 null;
     }
 
@@ -39,8 +39,7 @@ public class SteamIterator implements GameIterator {
                 i = -1;
                 break;
             }
-            if (type.equals(GameType.RTS) ||
-                    games.get(i).getType().equals(type)) {
+            if (games.get(i).getType().equals(type)) {
                 break;
             }
         }

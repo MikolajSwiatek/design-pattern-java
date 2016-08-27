@@ -4,6 +4,8 @@ public class Game {
     private String name;
     private GameType type;
 
+    public Game() { }
+
     public Game(String name, GameType type) {
         this.name = name;
         this.type = type;
@@ -23,5 +25,13 @@ public class Game {
 
     public void setType(GameType type) {
         this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "Game{" +
+                "name='" + name + '\'' +
+                ", type=" + type +
+                '}';
     }
 }
