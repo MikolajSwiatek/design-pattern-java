@@ -15,5 +15,8 @@ public class Main {
         System.out.println(note.getAll());
 
         System.out.println(note.get(date));
+        
+        note.remove("t2");
+        System.out.println(note.getAll());
     }
 }
