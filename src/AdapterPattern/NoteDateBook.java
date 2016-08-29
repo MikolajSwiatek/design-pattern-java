@@ -10,7 +10,7 @@ public class NoteDateBook implements NoteDateRecord {
     List<Note> notes;
 
     public NoteDateBook() {
-        this.notes = new ArrayList<Note>();
+        this.notes = new ArrayList<>();
     }
 
     @Override
@@ -21,14 +21,25 @@ public class NoteDateBook implements NoteDateRecord {
 
     @Override
     public void remove(String title, Date date) {
-        Optional<Note> note = notes
-                .stream()
-                .filter(p -> p.getText().equals(title) && p.getDate() == date)
-                .findFirst();
+        List<Note> note;
 
-        if (note.isPresent()) {
-            notes.remove(note);
+        if (date == null) {
+            note = notes
+                    .stream()
+                    .filter(p -> p.getText().equals(title))
+                    .collect(Collectors.toList());
         }
+        else {
+            note = notes
+                    .stream()
+                    .filter(p -> p.getText().equals(title) && p.getDate() == date)
+                    .collect(Collectors.toList());
+        }
+
+        if (note.size() != 1) {
+            return;
+        }
+        notes.remove(note);
     }
 
     @Override
@@ -45,12 +56,10 @@ public class NoteDateBook implements NoteDateRecord {
 
     @Override
     public List<Note> get(Date date) {
-        List<Note> collect  = notes
+        return notes
                 .stream()
                 .filter(p -> p.getDate() == date)
                 .collect(Collectors.toList());
-
-        return collect;
     }
 
     @Override
