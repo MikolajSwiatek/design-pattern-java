@@ -21,37 +21,29 @@ public class NoteDateBook implements NoteDateRecord {
 
     @Override
     public void remove(String title, Date date) {
-        List<Note> note;
-
-        if (date == null) {
-            note = notes
-                    .stream()
-                    .filter(p -> p.getText().equals(title))
-                    .collect(Collectors.toList());
-        }
-        else {
-            note = notes
-                    .stream()
-                    .filter(p -> p.getText().equals(title) && p.getDate() == date)
-                    .collect(Collectors.toList());
-        }
+        List<Note> note = notes
+                .stream()
+                .filter(p -> p.getTitle().equals(title) && p.getDate() == date)
+                .collect(Collectors.toList());
 
         if (note.size() != 1) {
             return;
         }
-        notes.remove(note);
+        notes.remove(note.get(0));
     }
 
     @Override
     public String get(String title) {
-        Optional<Note> note = notes
+        List<Note> note = notes
                 .stream()
-                .filter(p -> p.getText().equals(title))
-                .findFirst();
+                .filter(p -> p.getTitle().equals(title))
+                .collect(Collectors.toList());
 
-        return note.isPresent() ?
-                note.get().getText() :
-                "";
+        if (note.size() != 1) {
+            return "";
+        }
+
+        return note.get(0).getText();
     }
 
     @Override
@@ -64,14 +56,16 @@ public class NoteDateBook implements NoteDateRecord {
 
     @Override
     public String get(String title, Date date) {
-        Optional<Note> note = notes
+        List<Note> note = notes
                 .stream()
-                .filter(p -> p.getText().equals(title) && p.getDate() == date)
-                .findFirst();
+                .filter(p -> p.getTitle().equals(title) && p.getDate() == date)
+                .collect(Collectors.toList());
 
-        return note.isPresent() ?
-                note.get().getText() :
-                "";
+        if (note.size() != 1) {
+            return "";
+        }
+
+        return note.get(0).getText();
     }
 
     @Override

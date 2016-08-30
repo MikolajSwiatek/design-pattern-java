@@ -54,7 +54,7 @@ public class AdapterTests {
         notes.add("t2", "text");
         String text = notes.get("t1");
 
-        Assert.assertEquals("t1", text);
+        Assert.assertEquals("text1", text);
     }
 
     @Test
