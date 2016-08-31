@@ -58,9 +58,27 @@ public class AdapterTests {
     }
 
     @Test
-    public void whenGetNotExistwNoteShouldReturnCorrectValue() {
+    public void whenGetNotExistNoteShouldReturnCorrectValue() {
         notes.add("t1", "text1");
         String text = notes.get("t2");
+
+        Assert.assertEquals("", text);
+    }
+
+    @Test
+    public void whenGetNoteWithDateAndRemoveOneShouldReturnCorrectSize1() {
+        Date date = new Date();
+        notes.add("t1", "text1", date);
+        notes.add("t2", "text");
+        String text = notes.get("t1", date);
+
+        Assert.assertEquals("text1", text);
+    }
+    
+    @Test
+    public void whenGetNoteWithNotCorrectDateShouldReturnCorrectValue() {
+        notes.add("t1", "text1", new Date());
+        String text = notes.get("t2", new Date());
 
         Assert.assertEquals("", text);
     }
