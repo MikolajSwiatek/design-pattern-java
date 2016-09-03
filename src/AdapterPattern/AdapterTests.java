@@ -74,7 +74,7 @@ public class AdapterTests {
 
         Assert.assertEquals("text1", text);
     }
-    
+
     @Test
     public void whenGetNoteWithNotCorrectDateShouldReturnCorrectValue() {
         notes.add("t1", "text1", new Date());
