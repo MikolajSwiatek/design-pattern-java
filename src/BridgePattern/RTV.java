@@ -20,6 +20,11 @@ public abstract class RTV implements Device {
     }
 
     @Override
+    public String getName() {
+        return this.name;
+    }
+
+    @Override
     public String getStatus() {
         return "RTV: " + status;
     }

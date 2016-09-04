@@ -5,6 +5,8 @@ public interface Device {
 
     public void off();
 
+    public String getName();
+
     public String getStatus();
 
     public String toString();
