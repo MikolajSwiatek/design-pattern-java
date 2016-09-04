@@ -12,7 +12,7 @@ public class PcBridgeTests extends BridgeTestBase {
 
     @Test
     public void whenBuy() {
-        String expected = new String("off");
+        String expected = new String("PC: off");
         Assert.assertEquals(expected, remote.checkStatus());
     }
 }
