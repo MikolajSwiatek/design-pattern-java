@@ -10,4 +10,12 @@ public class TV extends RTV {
     public String getStatus() {
         return "TV: " + status;
     }
+
+    @Override
+    public String toString() {
+        return "TV{" +
+                "status='" + status + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

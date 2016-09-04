@@ -5,7 +5,7 @@ public abstract class RTV implements Device {
     protected String name;
 
     public RTV() {
-        this.status = "RTV";
+        this.name = "RTV";
         this.status = "off";
     }
 
@@ -22,5 +22,13 @@ public abstract class RTV implements Device {
     @Override
     public String getStatus() {
         return "RTV: " + status;
+    }
+
+    @Override
+    public String toString() {
+        return "RTV{" +
+                "status='" + status + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
