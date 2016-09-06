@@ -18,7 +18,7 @@ public class SingletonTests {
         setNameAndValue(singleton, "name_1", "value_1");
         singleton2 = MySingleton.getInstance();
         setNameAndValue(singleton2, "name_2", "value_2");
-        assertEquals(singleton.getName().equals(singleton2.getName()), true);
+        assertEquals(true, singleton.getName().equals(singleton2.getName()));
     }
 
     @Test
@@ -26,7 +26,7 @@ public class SingletonTests {
         setNameAndValue(singleton, "name_1", "value_1");
         singleton2 = MySingleton.getInstance();
         setNameAndValue(singleton2, "name_2", "value_2");
-        assertEquals(singleton.getValue().equals(singleton2.getValue()), true);
+        assertEquals(true, singleton.getValue().equals(singleton2.getValue()));
     }
 
     private void setNameAndValue(MySingleton s, String name, String value) {
