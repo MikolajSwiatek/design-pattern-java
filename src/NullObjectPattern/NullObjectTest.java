@@ -23,7 +23,7 @@ public class NullObjectTest {
     public void NullSoundTest() {
         Animal nullAnimal = new NullAnimal();
 
-        assertTrue(nullAnimal.getSound() == null);
+        assertTrue(null == nullAnimal.getSound());
     }
 
     @Test
