@@ -22,7 +22,7 @@ public class ValueObjectTests {
     }
 
     @Test
-    public void whenEquals_ShouldReturnFalse() {
+    public void whenNotSame_ShouldReturnTrue() {
         Assert.assertNotSame(studentA, studentC);
         Assert.assertNotSame(studentB, studentC);
     }
