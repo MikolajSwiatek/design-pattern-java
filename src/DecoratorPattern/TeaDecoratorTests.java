@@ -16,7 +16,7 @@ public class TeaDecoratorTests {
     public void SimpleTeaCostTest() {
         Tea t = new SimpleTea();
 
-        Assert.assertTrue(t.getCost() == 1);
+        Assert.assertTrue(1 == t.getCost());
     }
 
     @Test
@@ -32,7 +32,7 @@ public class TeaDecoratorTests {
         Tea t = new SimpleTea();
         t = new TeaWithSugarDecorator(t);
 
-        Assert.assertTrue(t.getCost() == 1.5);
+        Assert.assertTrue(1.5 == t.getCost());
     }
 
     @Test
@@ -48,7 +48,7 @@ public class TeaDecoratorTests {
         Tea t = new SimpleTea();
         t = new TeaWithLemonDecorator(t);
 
-        Assert.assertTrue(t.getCost() == 2.5);
+        Assert.assertTrue(2.5 == t.getCost());
     }
 
     @Test
@@ -66,7 +66,7 @@ public class TeaDecoratorTests {
         t = new TeaWithSugarDecorator(t);
         t = new TeaWithLemonDecorator(t);
 
-        Assert.assertTrue(t.getCost() == 3);
+        Assert.assertTrue(3 == t.getCost());
     }
 
     @Test
@@ -84,6 +84,6 @@ public class TeaDecoratorTests {
         t = new TeaWithLemonDecorator(t);
         t = new TeaWithSugarDecorator(t);
 
-        Assert.assertTrue(t.getCost() == 3);
+        Assert.assertTrue(3 == t.getCost());
     }
 }
